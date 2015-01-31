@@ -1,0 +1,20 @@
+{
+    "name": "brianreeve/asset-proxy",
+    "description": "Super simple asset proxy.",
+    "authors": [
+        {
+            "name": "Brian Christopher Reeve",
+            "email": "bcreeve@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0",
+        "brianreeve/mime-type": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "BrianReeve\\AssetProxy": "src/"
+        }
+    }
+}
