@@ -6,16 +6,22 @@ namespace BrianReeve\AssetProxy;
 
 class AssetLoader
 {
-	protected $_basePath = '';
+	protected $_basePath = '/';
 
-	public function __construct($basePath)
+	public function __construct($basePath = NULL)
 	{
-		$this->_basePath = $basePath;
+		if (!empty($basePath)) {
+			$this->_basePath = $basePath;
+		}
 	}
 
-	public function getAsset($relativePath)
+	public function getAsset($path)
 	{
-		$fullPath = $this->_basePath.$relativePath;
+		if (empty($this->_basePath) || strpos($path,'/') === 0) {
+			$fullPath = $path;
+		} else {
+			$fullPath = $this->_basePath.$path;
+		}
 		return new Asset($fullPath);
 	}
 
