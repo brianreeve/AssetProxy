@@ -10,6 +10,10 @@ class AssetLoader
 
 	public function __construct($basePath = NULL)
 	{
+		if (strtoupper(substr(PHP_OS, 0 , 3)) === 'WIN') {
+			$this->_basePath = '';
+		}
+
 		if (!empty($basePath)) {
 			$this->_basePath = $basePath;
 		}
